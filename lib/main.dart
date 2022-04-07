@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'Screens/LoginForm.dart';
-import 'Screens/HomeForm.dart';
+import 'Screens/login_screen.dart';
+import 'Screens/home_screen.dart';
 
-// void main() {
-//   runApp(MyApp());
-// }
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -19,21 +16,7 @@ Future<void> main() async {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: status == true ? LoginForm() : HomeForm(),
+      home: status == true ? const Login() : const Home(),
     ),
   );
 }
-
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: 'Login with Signup',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: LoginForm(),
-//     );
-//   }
-// }
